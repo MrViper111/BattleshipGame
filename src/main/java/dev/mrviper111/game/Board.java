@@ -7,11 +7,13 @@ public class Board {
     private Difficulty difficulty;
     private String[][] board;
     private int boardSize;
+    private int shipCount;
+    private int[][] boardData;
 
     public Board(Difficulty difficulty) {
         this.difficulty = difficulty;
 
-        switch (difficulty) {
+        switch (this.difficulty) {
             case EASY -> {
                 this.boardSize = 8;
             }
@@ -23,7 +25,9 @@ public class Board {
             }
         }
 
+        this.shipCount = this.boardSize / 2;
         this.board = new String[this.boardSize][this.boardSize];
+        this.boardData = new String[this.boardSize][this.boardSize];
     }
 
     public boolean attack(int row, int column) {
@@ -37,7 +41,7 @@ public class Board {
     }
 
     public void placeShips() {
-
+        // ship shit
     }
 
     public void printBoard() {
