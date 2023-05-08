@@ -22,7 +22,7 @@ public class BattleshipGame {
             } else if (username.length() > 16) {
                 System.out.println("[Error] The length of your username cannot be more than 16 characters.");
             } else {
-                break
+                break;
             }
         }
 
@@ -43,7 +43,7 @@ public class BattleshipGame {
                     break;
                 }
                 default: {
-                    System.out.println("[Error] Invalid difficulty. Please enter either easy, medium, or hard.")
+                    System.out.println("[Error] Invalid difficulty. Please enter either easy, medium, or hard.");
                 }
             }
 
