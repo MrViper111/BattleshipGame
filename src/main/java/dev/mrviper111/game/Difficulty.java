@@ -1,2 +1,7 @@
-package dev.mrviper111.game;public class Difficulty {
+package dev.mrviper111.game;
+
+public enum Difficulty {
+    EASY,
+    MEDIUM,
+    HARD
 }
