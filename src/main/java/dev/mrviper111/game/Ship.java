@@ -2,18 +2,26 @@ package dev.mrviper111.game;
 
 public class Ship {
 
-    private enum ShipType {
-        DESTROYER,
-        BATTLESHIP,
-        CARRIER
+    private String name;
+    private String id;
+    private int size;
+
+    public Ship(String name, String id, int size) {
+        this.name = name;
+        this.id = id;
+        this.size = size;
     }
 
-    private final ShipType shipType;
-    private final String id;
+    public String getName() {
+        return this.name;
+    }
 
-    public Ship(ShipType shipType, String id) {
-        this.shipType = shipType;
-        this.id = id;
+    public String getId() {
+        return this.id;
+    }
+
+    public int getSize() {
+        return this.size;
     }
 
 }
