@@ -49,21 +49,25 @@ public class Board {
             case UP: {
                 for (int i = row; i < row - ship.getSize(); i--) {
                     this.board[i][column] = "1";
+                    this.boardData[i][column] = ship.getId();
                 }
             }
             case DOWN: {
                 for (int i = row; i < row + ship.getSize(); i++) {
                     this.board[i][column] = "1";
+                    this.boardData[i][column] = ship.getId();
                 }
             }
             case LEFT: {
                 for (int i = column; i < column - ship.getSize(); i--) {
                     this.board[row][i] = "1";
+                    this.boardData[row][i] = ship.getId();
                 }
             }
             case RIGHT: {
                 for (int i = column; i < column + ship.getSize(); i++) {
                     this.board[i][column] = "1";
+                    this.boardData[row][i] = ship.getId();
                 }
             }
 
