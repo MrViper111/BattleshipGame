@@ -40,7 +40,34 @@ public class Board {
         }
     }
 
-    public void placeShip(Location location, Direction direction) {
+    public void placeShip(Ship ship, Location location, Direction direction) {
+        int row = location.getRow();
+        int column = location.getColumn();
+
+        switch (direction) {
+            
+            case UP: {
+                for (int i = row; i < row - ship.getSize(); i--) {
+                    this.board[i][column] = "1";
+                }
+            }
+            case DOWN: {
+                for (int i = row; i < row + ship.getSize(); i++) {
+                    this.board[i][column] = "1";
+                }
+            }
+            case LEFT: {
+                for (int i = column; i < column - ship.getSize(); i--) {
+                    this.board[row][i] = "1";
+                }
+            }
+            case RIGHT: {
+                for (int i = column; i < column + ship.getSize(); i++) {
+                    this.board[i][column] = "1";
+                }
+            }
+
+        }
 
     }
 
