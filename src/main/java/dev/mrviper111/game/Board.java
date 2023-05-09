@@ -1,6 +1,7 @@
 package dev.mrviper111.game;
 
-import java.util.Arrays;
+import dev.mrviper111.game.enums.Difficulty;
+import dev.mrviper111.game.enums.Direction;
 
 public class Board {
 
@@ -8,26 +9,25 @@ public class Board {
     private String[][] board;
     private int boardSize;
     private int shipCount;
-    private int[][] boardData;
+    private String[][] boardData;
+
+    private String[] rows = new String[this.boardSize];
+    private String[] columns = new String[this.boardSize];
 
     public Board(Difficulty difficulty) {
         this.difficulty = difficulty;
 
-        switch (this.difficulty) {
-            case EASY -> {
-                this.boardSize = 8;
-            }
-            case MEDIUM -> {
-                this.boardSize = 10;
-            }
-            case HARD -> {
-                this.boardSize = 15;
-            }
-        }
-
+        this.boardSize = this.difficulty.
         this.shipCount = this.boardSize / 2;
         this.board = new String[this.boardSize][this.boardSize];
-        this.boardData = new String[this.boardSize][this.boardSize];
+        this.boardData = board.clone();
+
+
+//        for (int i = 0; i < this.boardSize; i++) {
+//            this.rows[i] = GameManager.MAX_ROWS[i];
+//            this.columns[i] = GameManager.MAX_COLUMNS[i];
+//        }
+
     }
 
     public boolean attack(int row, int column) {
@@ -40,8 +40,8 @@ public class Board {
         }
     }
 
-    public void placeShips() {
-        // ship shit
+    public void placeShip(Location location, Direction direction) {
+
     }
 
     public void printBoard() {

@@ -1,6 +1,7 @@
 package dev.mrviper111.game;
 
-import dev.mrviper111.utils.InputHandler;
+import dev.mrviper111.game.enums.Difficulty;
+import dev.mrviper111.utils.CLIHandler;
 
 public class Game {
 
@@ -24,6 +25,11 @@ public class Game {
         this.botBoard = new Board(this.difficulty);
 
         playerBoard.printBoard();
+        System.out.println("This is your current board, it looks pretty empty so we're going to have to place some ships.\n");
+
+        String test = CLIHandler.promptString("test: ");
+        Location t = GameManager.parseLocation(test);
+        System.out.println(t.getRow() + " " + t.getColumn());
 
     }
 

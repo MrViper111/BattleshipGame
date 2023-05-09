@@ -1,8 +1,9 @@
 package dev.mrviper111.utils;
 
 import java.util.Scanner;
+import java.io.Console;
 
-public class InputHandler {
+public class CLIHandler {
 
     public static String promptString(String message) {
         Scanner input = new Scanner(System.in);
@@ -16,6 +17,12 @@ public class InputHandler {
         System.out.print(message);
 
         return input.nextInt();
+    }
+
+    public static void clear() {
+        for (int i = 0; i < 100; i++) {
+            System.out.println();
+        }
     }
 
 }
