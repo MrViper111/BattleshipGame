@@ -11,8 +11,15 @@ public class GameManager {
     public static final String[] MAX_COLUMNS = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O"};
 
     public static Location parseLocation(String locationStr) {
-        int column = Arrays.toString(MAX_COLUMNS).indexOf(locationStr.substring(0, 1)) - 1;
-        int row = Integer.parseInt(locationStr.substring(1)) - 1;
+        int row;
+        int column = -1;
+
+        for (int i = 0; i < MAX_COLUMNS.length; i++) {
+            if (locationStr.substring(0, 1).equalsIgnoreCase(MAX_COLUMNS[i])) {
+                column = i;
+            }
+        }
+        row = Integer.parseInt(locationStr.substring(1)) - 1;
 
         return new Location(row, column);
     }
@@ -37,10 +44,6 @@ public class GameManager {
                 }
             }
         }
-
-        System.out.println(patrolBoatCount);
-        System.out.println(destroyerCount);
-        System.out.println(battleshipCount);
 
         shipMap.put(ShipType.PATROL_BOAT, patrolBoatCount);
         shipMap.put(ShipType.DESTROYER, destroyerCount);

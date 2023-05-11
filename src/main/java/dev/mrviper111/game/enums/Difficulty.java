@@ -2,6 +2,7 @@ package dev.mrviper111.game.enums;
 
 public enum Difficulty {
 
+    TEST ("test", 5, ShipType.PATROL_BOAT, ShipType.PATROL_BOAT, ShipType.PATROL_BOAT),
     EASY ("easy", 8, ShipType.PATROL_BOAT, ShipType.PATROL_BOAT, ShipType.DESTROYER, ShipType.BATTLESHIP),
     MEDIUM ("medium", 10, ShipType.PATROL_BOAT, ShipType.PATROL_BOAT, ShipType.DESTROYER, ShipType.DESTROYER, ShipType.BATTLESHIP),
     HARD ("hard", 15, ShipType.PATROL_BOAT, ShipType.PATROL_BOAT, ShipType.PATROL_BOAT, ShipType.DESTROYER, ShipType.DESTROYER, ShipType.DESTROYER, ShipType.BATTLESHIP);

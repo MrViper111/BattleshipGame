@@ -69,9 +69,11 @@ public class Board {
                 }
             }
             case LEFT: {
-                for (int i = column; i < column - ship.getSize(); i--) {
+                // TODO: compute index not in loop
+                for (int i = 0; i < ship.getSize(); i--) {
                     this.board[row][i] = "1";
                     //this.boardData[row][i] = ship.getId();
+                    // 0 3
                 }
             }
             case RIGHT: {
@@ -86,13 +88,17 @@ public class Board {
     }
 
     public void printBoard() {
-        System.out.print("   ");
+        System.out.print("    ");
         for (int i = 0; i < this.boardSize; i++) {
             System.out.print(" [" + this.columns[i] + "] ");
         }
         System.out.println();
 
         for (int i = 0; i < this.boardSize; i++) {
+
+            if (Integer.parseInt(this.rows[i]) < 10) {
+                System.out.print(" ");
+            }
             System.out.print("[" + this.rows[i] + "]  ");
 
             for (int j = 0; j < this.boardSize; j++) {

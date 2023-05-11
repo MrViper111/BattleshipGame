@@ -21,11 +21,6 @@ public class Game {
 
     public void init() {
 
-        System.out.println("----------------------------------------------------------");
-        System.out.println("Welcome to the Battleship game!");
-        System.out.println("instructions");
-        System.out.println("----------------------------------------------------------");
-
         this.playerBoard = new Board(this.difficulty);
         this.botBoard = new Board(this.difficulty);
 
@@ -39,6 +34,8 @@ public class Game {
             Direction direction;
 
             while (true) {
+                int shipSelection;
+                int shipsLeft;
 
                 System.out.println("Available ships: ");
                 int number = 0;
@@ -46,11 +43,12 @@ public class Game {
                 for (ShipType type : availableShips.keySet()) {
                     int shipAmount = availableShips.get(type);
                     number++;
+
                     System.out.println(" " + number + ". (" + shipAmount + "x) - " + type.getName());
                 }
 
                 while (true) {
-                    int shipSelection = CLIHandler.promptInt("Which ship would you like to place (1-3): ");
+                    shipSelection = CLIHandler.promptInt("Which ship would you like to place (1-3): ");
 
                     if (shipSelection != -1 && shipSelection > availableShips.size() || shipSelection < 1) {
                         System.out.println("[Error] Please enter a valid selection (1-3).");
@@ -64,7 +62,7 @@ public class Game {
                         continue;
                     }
 
-                    int shipsLeft = availableShips.get(shipType) - 1;
+                    shipsLeft = availableShips.get(shipType) - 1;
                     availableShips.replace(shipType, shipsLeft);
 
                     if (shipsLeft < 1) {
@@ -123,9 +121,14 @@ public class Game {
                 }
 
                 try {
-                    this.playerBoard.placeShip(shipType, location, Direction.RIGHT);
+                    this.playerBoard.placeShip(shipType, location, direction);
                 } catch (ArrayIndexOutOfBoundsException error) {
                     System.out.println("[Error] You can't place your ship here! It will collide with something!");
+
+                    if (shipsLeft < 1) {
+                        availableShips.put(shipType, shipsLeft + 1);
+                    }
+
                     continue;
                 }
 
@@ -134,6 +137,16 @@ public class Game {
 
             this.playerBoard.printBoard();
 
+        }
+
+    }
+
+    public void endGame(boolean wonGame) {
+
+        if (wonGame) {
+            System.out.println("Wait you won");
+        } else {
+            System.out.println("L");
         }
 
     }
