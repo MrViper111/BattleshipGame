@@ -16,7 +16,16 @@ public class CLIHandler {
         Scanner input = new Scanner(System.in);
         System.out.print(message);
 
-        return input.nextInt();
+        String rawResult = input.next();
+        int result;
+
+        try {
+            result = Integer.parseInt(rawResult);
+        } catch (NumberFormatException e) {
+            return -1;
+        }
+
+        return result;
     }
 
     public static void clear() {

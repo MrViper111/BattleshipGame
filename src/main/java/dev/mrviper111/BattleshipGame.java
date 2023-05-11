@@ -16,40 +16,33 @@ public class BattleshipGame {
         System.out.println("So yeah if you don't know the instructions too bad!");
         System.out.println("--------------------------------\n");
 
-        String username;
         Difficulty difficulty;
-
-        while (true) {
-            username = CLIHandler.promptString("Enter a username: ");
-
-            if (username.contains(" ")) {
-                System.out.println("[Error] Your username cannot contain any spaces.");
-            } else if (username.length() > 16) {
-                System.out.println("[Error] The length of your username cannot be more than 16 characters.");
-            } else {
-                break;
-            }
-        }
 
         System.out.println("\nDifficulty options...");
         System.out.println("  1. Easy - 4 ships on a 8x8 board");
         System.out.println("  2. Medium - 5 ships on a 10x10 board");
         System.out.println("  3. Hard - 7 ships on a 15x15 board\n");
 
+        label:
         while (true) {
             String difficultyStr = CLIHandler.promptString("Enter a difficulty (1-3): ").toLowerCase();
 
-            if (difficultyStr.equals("1") || difficultyStr.equals("easy")) {
-                difficulty = Difficulty.EASY;
-                break;
-            } else if (difficultyStr.equals("2") || difficultyStr.equals("medium")) {
-                difficulty = Difficulty.MEDIUM;
-                break;
-            } else if (difficultyStr.equals("3") || difficultyStr.equals("hard")) {
-                difficulty = Difficulty.HARD;
-                break;
-            } else {
-                System.out.println("[Error] Please enter a valid difficulty (1-3).");
+            switch (difficultyStr) {
+                case "1":
+                case "easy":
+                    difficulty = Difficulty.EASY;
+                    break label;
+                case "2":
+                case "medium":
+                    difficulty = Difficulty.MEDIUM;
+                    break label;
+                case "3":
+                case "hard":
+                    difficulty = Difficulty.HARD;
+                    break label;
+                default:
+                    System.out.println("[Error] Please enter a valid difficulty (1-3).");
+                    break;
             }
         }
 
@@ -57,7 +50,7 @@ public class BattleshipGame {
 
         CLIHandler.clear();
 
-        Game game = new Game(difficulty, username);
+        Game game = new Game(difficulty);
         game.init();
     }
 
