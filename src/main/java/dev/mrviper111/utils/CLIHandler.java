@@ -21,7 +21,7 @@ public class CLIHandler {
 
         try {
             result = Integer.parseInt(rawResult);
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException error) {
             return -1;
         }
 
