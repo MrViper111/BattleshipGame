@@ -125,7 +125,7 @@ public class Game {
                 try {
                     this.playerBoard.placeShip(shipType, location, Direction.RIGHT);
                 } catch (ArrayIndexOutOfBoundsException error) {
-                    System.out.println("You failed...");
+                    System.out.println("[Error] You can't place your ship here! It will collide with something!");
                     continue;
                 }
 
