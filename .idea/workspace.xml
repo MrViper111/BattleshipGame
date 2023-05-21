@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/BattleshipGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/BattleshipGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/enums/Difficulty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/enums/Difficulty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/enums/ShipType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/enums/ShipType.java" afterDir="false" />
     </list>
-    <list id="d5efedbb-17a5-406b-b83e-aab2ab745239" name="Changes by Blurmit" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/mrviper111/utils/CLIHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/mrviper111/utils/CLIHandler.java" afterDir="false" />
-    </list>
+    <list id="d5efedbb-17a5-406b-b83e-aab2ab745239" name="Changes by Blurmit" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,37 +22,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Board.java">
-      <ranges>
-        <range start1="4" end1="4" start2="4" end2="7" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="13" end1="15" start2="16" end2="18" changelist="d5efedbb-17a5-406b-b83e-aab2ab745239" />
-        <range start1="19" end1="20" start2="22" end2="23" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="22" end1="22" start2="25" end2="33" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="24" end1="29" start2="35" end2="39" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="42" end1="43" start2="52" end2="53" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="51" end1="52" start2="61" end2="62" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="57" end1="58" start2="67" end2="68" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="63" end1="64" start2="73" end2="74" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="68" end1="70" start2="78" end2="80" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="78" end1="78" start2="88" end2="94" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="79" end1="79" start2="95" end2="96" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/main/java/dev/mrviper111/game/Game.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="5" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="5" end1="5" start2="7" end2="9" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="7" end1="7" start2="11" end2="12" changelist="d5efedbb-17a5-406b-b83e-aab2ab745239" />
-        <range start1="8" end1="9" start2="13" end2="13" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="12" end1="13" start2="16" end2="17" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="14" end1="15" start2="18" end2="19" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="18" end1="18" start2="22" end2="23" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="27" end1="28" start2="32" end2="50" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-        <range start1="29" end1="32" start2="51" end2="137" changelist="ae10bcaf-c9e2-4e5f-b5ad-dcd301fb632c" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -122,7 +80,8 @@
       <workItem from="1682837023636" duration="59000" />
       <workItem from="1683555228152" duration="8949000" />
       <workItem from="1683673579956" duration="10117000" />
-      <workItem from="1683763026212" duration="4446000" />
+      <workItem from="1683763026212" duration="5282000" />
+      <workItem from="1684687106794" duration="50000" />
     </task>
     <servers />
   </component>
