@@ -55,7 +55,7 @@ public class BattleshipGame {
         System.out.println("\nStarting game...\n");
         CLIHandler.clear();
 
-        Game game = new Game(Difficulty.TEST);
+        Game game = new Game(difficulty);
 
         MediaPlayer.playSound(MediaPlayer.Sound.DING);
         game.init();
