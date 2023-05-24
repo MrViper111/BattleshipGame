@@ -59,6 +59,10 @@ public class Board {
 
     }
 
+    public String[][] getBoard() {
+        return this.board;
+    }
+
     public boolean attack(Location location) {
         int row = location.getRow();
         int column = location.getColumn();

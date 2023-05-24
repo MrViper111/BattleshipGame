@@ -187,7 +187,7 @@ public class Game {
 
             TimeUnit.SECONDS.sleep(2);
 
-            if (this.playerBoard.attack(Bot.getAttackLocation(this.difficulty))) {
+            if (this.playerBoard.attack(Bot.getAttackLocation(this.playerBoard, this.difficulty))) {
                 System.out.println("A hit was landed on you!\n");
                 MediaPlayer.playSound(MediaPlayer.Sound.EXPLODE);
             } else {
@@ -219,12 +219,12 @@ public class Game {
             MediaPlayer.playSound(MediaPlayer.Sound.WIN);
 
             System.out.println("------------ Winner ------------");
-            System.out.println(GameManager.WIN_MESSAGES[ThreadLocalRandom.current().nextInt(0, GameManager.WIN_MESSAGES.length - 1)]);
+            System.out.println(GameManager.getRandomMessage(GameManager.WIN_MESSAGES));
         } else {
             MediaPlayer.playSound(MediaPlayer.Sound.LOSE);
 
             System.out.println("------------ Loser ------------");
-            System.out.println(GameManager.LOSE_MESSAGES[ThreadLocalRandom.current().nextInt(0, GameManager.LOSE_MESSAGES.length - 1)]);
+            System.out.println(GameManager.getRandomMessage(GameManager.LOSE_MESSAGES));
         }
 
         System.out.println();
