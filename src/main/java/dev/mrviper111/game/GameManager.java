@@ -16,9 +16,10 @@ public class GameManager {
     public static final Direction[] POSSIBLE_DIRECTIONS = {Direction.UP, Direction.DOWN, Direction.LEFT, Direction.RIGHT};
 
     public static final String[] HIT_MESSAGES = {"Nice! You landed a hit!", "Bullseye admiral! You hit em!", "Ah, a perfect shot as expected."};
-    public static final String[] MISS_MESSAGES = {"WHAT! You missed you fool!", "You missed!", "What a shame, another round wasted..."};
+    public static final String[] MISS_MESSAGES = {"WHAT! You fool you missed!", "You missed!", "What a shame, another round wasted..."};
 
-    public static final String[] BOT_HIT_MESSAGES = {"The enemy missed! We're safe for now", ""};
+    public static final String[] BOT_HIT_MESSAGES = {"Damn it! We've been hit!", "The enemy hit our ship!", "We're taking on more water! We've been hit!"};
+    public static final String[] BOT_MISS_MESSAGES = {"The enemy missed! We're safe for now.", "Ha! They missed!"};
 
     public static final String[] WIN_MESSAGES = {"Excellent work capturing the seas!", "Good job admiral! You won the game!", "Impressive! I didn't expect you would\nemerge victorious."};
     public static final String[] LOSE_MESSAGES = {"Damn it admiral! YOU BLUNDERED!!!", "What a shame... you lost the game.\nHey, that rhymes!", "You have failed for the last time admi- CAPTAIN."};

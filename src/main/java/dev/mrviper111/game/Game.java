@@ -7,25 +7,32 @@ import dev.mrviper111.utils.CLIHandler;
 import dev.mrviper111.utils.MediaPlayer;
 
 import java.util.*;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 public class Game {
 
     private final Map<ShipType, Integer> availableShips;
     private final Difficulty difficulty;
+
     private Board playerBoard;
     private Board botBoard;
 
-    private int shotsFired;
-    private int hits;
+    private int playerShotsFired;
+    private int playerHits;
+
+    private int botShotsFired;
+    private int botHits;
+
+    private final long startTime;
 
     public Game(Difficulty difficulty) {
         this.difficulty = difficulty;
         this.availableShips = GameManager.parseShipDuplicates(this.difficulty.getAllocatedShips());
 
-        this.shotsFired = 0;
-        this.hits = 0;
+        this.playerShotsFired = 0;
+        this.playerHits = 0;
+
+        this.startTime = System.currentTimeMillis();
     }
 
     public void init() throws InterruptedException {
@@ -130,18 +137,19 @@ public class Game {
                 }
 
                 if (!this.playerBoard.tryPlaceShip(shipType, direction, location)) {
-                    System.out.println("[Error] Invalid location.");
+                    System.out.println("[Error] You can't place your ship here.");
                     continue;
                 }
 
                 break;
             }
 
+            System.out.println();
             this.playerBoard.printBoard();
 
         }
 
-        System.out.println("The bot is placing their ships...");
+        System.out.println("The enemy is placing their ships...");
         Bot.placeRandomShips(this.botBoard, this.difficulty);
 
         while (true) {
@@ -165,16 +173,16 @@ public class Game {
                 break;
             }
 
-            shotsFired++;
+            playerShotsFired++;
             MediaPlayer.playSound(MediaPlayer.Sound.FIRE);
             TimeUnit.SECONDS.sleep(2);
 
             if (this.botBoard.attack(attackLocation)) {
-                System.out.println("Nice! You landed a hit!");
+                System.out.println(GameManager.getRandomMessage(GameManager.HIT_MESSAGES));
                 MediaPlayer.playSound(MediaPlayer.Sound.EXPLODE);
-                hits++;
+                playerHits++;
             } else {
-                System.out.println("You missed!");
+                System.out.println(GameManager.getRandomMessage(GameManager.MISS_MESSAGES));
                 MediaPlayer.playSound(MediaPlayer.Sound.MISS);
             }
 
@@ -188,12 +196,15 @@ public class Game {
             TimeUnit.SECONDS.sleep(2);
 
             if (this.playerBoard.attack(Bot.getAttackLocation(this.playerBoard, this.difficulty))) {
-                System.out.println("A hit was landed on you!\n");
+                System.out.println(GameManager.getRandomMessage(GameManager.BOT_HIT_MESSAGES));
                 MediaPlayer.playSound(MediaPlayer.Sound.EXPLODE);
+                botHits++;
             } else {
-                System.out.println("The enemy missed! We're safe for now!\n");
+                System.out.println(GameManager.getRandomMessage(GameManager.BOT_MISS_MESSAGES));
                 MediaPlayer.playSound(MediaPlayer.Sound.MISS);
             }
+            System.out.println();
+            botShotsFired++;
 
             if (!this.playerBoard.isShipAlive()) {
                 endGame(false);
@@ -206,13 +217,14 @@ public class Game {
             System.out.println("Your board: ");
             this.playerBoard.printBoard();
 
-            CLIHandler.promptString("\nPress enter anything to continue... ");
+            CLIHandler.promptString("\nEnter anything to continue... ");
 
         }
 
     }
 
     public void endGame(boolean wonGame) {
+        long endTime = System.currentTimeMillis();
         CLIHandler.clear();
 
         if (wonGame) {
@@ -229,10 +241,17 @@ public class Game {
 
         System.out.println();
         System.out.println("Statistics:");
-        System.out.println("\tDifficulty played: " + this.difficulty.getName());
-        System.out.println("\tShots fired: " + this.shotsFired);
-        System.out.println("\tHits landed: " + this.hits);
-        System.out.println("\tAccuracy: " + Math.round((((double) this.hits / this.shotsFired) * 100)) + "%");
+        System.out.println("\tPlayer:");
+        System.out.println("\t  - Shots fired: " + this.playerShotsFired);
+        System.out.println("\t  - Hits landed: " + this.playerHits);
+        System.out.println("\t  - Accuracy: " + Math.round((((double) this.playerHits / this.playerShotsFired) * 100)) + "%");
+        System.out.println("\tBot:");
+        System.out.println("\t  - Shots fired: " + this.botShotsFired);
+        System.out.println("\t  - Hits landed: " + this.botHits);
+        System.out.println("\t  - Accuracy: " + Math.round((((double) this.botHits / this.botShotsFired) * 100)) + "%");
+        System.out.println();
+        System.out.println("Difficulty played: " + this.difficulty.getName());
+        System.out.println("The game lasted " + ((endTime - startTime) / 60000) + " minute(s) and " + (((endTime - startTime) / 1000) % 60) + " second(s).");
         System.out.println("--------------------------------");
 
         System.exit(0);

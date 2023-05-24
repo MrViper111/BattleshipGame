@@ -11,7 +11,6 @@ import java.util.concurrent.TimeUnit;
 public class BattleshipGame {
 
     public static void main(String[] args) throws InterruptedException {
-
         CLIHandler.clear();
         MediaPlayer.playSound(MediaPlayer.Sound.DISTANT_BOMBS);
 
@@ -54,7 +53,6 @@ public class BattleshipGame {
         }
 
         System.out.println("\nStarting game...\n");
-
         CLIHandler.clear();
 
         Game game = new Game(Difficulty.TEST);
